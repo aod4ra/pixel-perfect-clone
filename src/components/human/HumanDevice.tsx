@@ -38,7 +38,7 @@ export function HumanDevice() {
   return (
     <div className="flex flex-col items-center gap-5">
       {/* ===== UPPER HALF ===== */}
-      <div className="shell-surface w-[380px] rounded-[26px] rounded-b-[10px] p-4 pb-3 shadow-shell">
+      <div className="shell-surface w-[440px] rounded-[26px] rounded-b-[10px] p-4 pb-3 shadow-shell">
         <div className="flex items-start gap-3">
           <SpeakerGrille />
           <div className="screen-bezel flex-1 rounded-[6px] p-[6px]">
@@ -73,7 +73,7 @@ export function HumanDevice() {
       </div>
 
       {/* hinge */}
-      <div className="-my-4 flex w-[344px] items-center justify-center gap-2">
+      <div className="-my-4 flex w-[404px] items-center justify-center gap-2">
         <div className="shell-surface h-5 flex-1 rounded-[4px] shadow-shell" />
         <div className="shell-surface flex h-5 items-center gap-1.5 rounded-[4px] px-3">
           <span className="h-2 w-2 rounded-full bg-shell-line" />
@@ -86,7 +86,7 @@ export function HumanDevice() {
       </div>
 
       {/* ===== LOWER HALF ===== */}
-      <div className="shell-surface w-[380px] rounded-[10px] rounded-b-[26px] p-4 shadow-shell">
+      <div className="shell-surface w-[440px] rounded-[10px] rounded-b-[26px] p-4 shadow-shell">
         <div className="flex items-start gap-2">
           {/* D-PAD */}
           <div className="pt-8">
@@ -104,7 +104,7 @@ export function HumanDevice() {
           </div>
 
           {/* LOWER SCREEN */}
-          <div className="screen-bezel flex-1 rounded-[6px] p-[6px]">
+          <div className="screen-bezel min-w-0 flex-1 rounded-[6px] p-[6px]">
             <div className="screen-glass relative overflow-hidden rounded-[3px] px-2 py-2.5">
               <div className="flex items-start justify-between gap-1">
                 <Knob label="HUMANIZE" value={patch.humanize} onChange={set("humanize")} disabled={bypassed} />
