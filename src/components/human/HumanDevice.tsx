@@ -50,7 +50,7 @@ export function HumanDevice() {
                     {bypassed ? "BYPASSED" : "ACTIVE"}
                   </span>
                 </div>
-                <div key={gen} className="min-h-0 px-6 pt-1">
+                <div key={gen} className="mx-auto min-h-0 w-[58%] pt-1">
                   <Mascot drunk={drunk} bypassed={bypassed} />
                 </div>
                 <div className="flex items-center justify-between border-t border-lcd-dim/30 px-2 py-1.5 font-pixel text-[9px]">
