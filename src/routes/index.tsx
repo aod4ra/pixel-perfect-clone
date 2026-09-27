@@ -1,24 +1,35 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { HumanDevice } from "@/components/human/HumanDevice";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "HUMAN — MIDI Humanizer" },
+      {
+        name: "description",
+        content:
+          "HUMAN is a MIDI humanizer plugin concept shaped like a handheld console: turn the knobs and the little pixel character gets drunk.",
+      },
+      { property: "og:title", content: "HUMAN — MIDI Humanizer" },
+      {
+        property: "og:description",
+        content:
+          "A handheld-console MIDI humanizer: HUMANIZE, TIMING and VELOCITY knobs, a seed D-pad, and a mascot that loses its balance.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <main className="flex min-h-screen flex-col items-center justify-center gap-8 px-4 py-12">
+      <HumanDevice />
+      <p className="max-w-sm text-center font-pixel text-[8px] leading-[2] text-muted-foreground">
+        DRAG THE KNOBS · D-PAD MOVES THE SEED · GENERATE MAKES A NEW FEEL
+      </p>
+    </main>
   );
 }
