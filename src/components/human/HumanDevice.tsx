@@ -4,7 +4,9 @@ import { Mascot } from "./Mascot";
 
 type Patch = { humanize: number; timing: number; velocity: number };
 
-const PRESETS: Record<string, { name: string; patch: Patch }> = {
+type PresetKey = "A" | "B" | "X" | "Y";
+
+const PRESETS: Record<PresetKey, { name: string; patch: Patch }> = {
   A: { name: "TIGHT", patch: { humanize: 12, timing: 8, velocity: 18 } },
   B: { name: "LOOSE", patch: { humanize: 46, timing: 52, velocity: 38 } },
   X: { name: "SWAYED", patch: { humanize: 68, timing: 74, velocity: 55 } },
@@ -17,7 +19,7 @@ const STATUS = (d: number) =>
 export function HumanDevice() {
   const [patch, setPatch] = useState<Patch>({ humanize: 35, timing: 42, velocity: 63 });
   const [seed, setSeed] = useState(12345);
-  const [preset, setPreset] = useState<string | null>(null);
+  const [preset, setPreset] = useState<PresetKey | null>(null);
   const [bypassed, setBypassed] = useState(false);
   const [gen, setGen] = useState(0);
 
