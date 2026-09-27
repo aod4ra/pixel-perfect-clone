@@ -187,3 +187,9 @@
     opacity: 0.25;
   }
 }
+
+/* Invisible hit zones over the PNG hardware: only a soft press feedback. */
+.hw-hit { background: transparent; cursor: pointer; transition: background-color 120ms; }
+.hw-hit:hover { background: oklch(1 0 0 / 0.08); }
+.hw-hit:active { background: oklch(0 0 0 / 0.18); }
+.hw-hit[data-on="true"] { background: oklch(0.8 0.15 150 / 0.22); box-shadow: 0 0 10px oklch(0.8 0.15 150 / 0.5); }
