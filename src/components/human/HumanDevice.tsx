@@ -104,7 +104,7 @@ export function HumanDevice() {
           {/* LOWER SCREEN */}
           <div className="screen-glass absolute overflow-hidden" style={rect(BOT)}>
             <div className="flex h-full flex-col justify-between p-4" style={{ zoom: 1.35 } as React.CSSProperties}>
-              <div className="flex items-start justify-between gap-1">
+              <div className="grid grid-cols-3 items-start justify-items-center gap-2">
                 <Knob label="HUMANIZE" value={patch.humanize} onChange={set("humanize")} disabled={bypassed} />
                 <Knob label="TIMING" value={patch.timing} onChange={set("timing")} disabled={bypassed} />
                 <Knob label="VELOCITY" value={patch.velocity} onChange={set("velocity")} disabled={bypassed} />

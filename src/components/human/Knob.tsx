@@ -51,8 +51,8 @@ export function Knob({ label, value, onChange, disabled }: Props) {
   const ticks = Array.from({ length: 11 }, (_, i) => MIN_ANGLE + (i / 10) * 270);
 
   return (
-    <div className="flex flex-col items-center gap-1 select-none">
-      <span className="font-pixel text-[9px] text-lcd text-glow">{label}</span>
+    <div className="flex min-w-0 flex-col items-center gap-1 select-none">
+      <span className="font-pixel text-[11px] text-lcd text-glow">{label}</span>
       <div
         role="slider"
         tabIndex={disabled ? -1 : 0}
@@ -64,7 +64,7 @@ export function Knob({ label, value, onChange, disabled }: Props) {
         onPointerMove={onPointerMove}
         onPointerUp={() => (drag.current = null)}
         onKeyDown={onKeyDown}
-        className="relative h-[58px] w-[58px] cursor-ns-resize touch-none outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-full"
+        className="relative h-[76px] w-[76px] cursor-ns-resize touch-none rounded-full outline-none focus-visible:ring-2 focus-visible:ring-ring"
         style={{ opacity: disabled ? 0.45 : 1 }}
       >
         <svg viewBox="0 0 100 100" className="h-full w-full">
@@ -90,8 +90,8 @@ export function Knob({ label, value, onChange, disabled }: Props) {
           </g>
         </svg>
       </div>
-      <span className="font-pixel text-[11px] text-amber tabular-nums">{value}%</span>
-      <div className="flex w-[58px] justify-between font-pixel text-[7px] text-lcd-dim">
+      <span className="font-pixel text-[13px] text-amber tabular-nums">{value}%</span>
+      <div className="flex w-[76px] justify-between font-pixel text-[8px] text-lcd-dim">
         <span>0</span>
         <span>100</span>
       </div>
